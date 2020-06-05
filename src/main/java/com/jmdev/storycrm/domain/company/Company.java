@@ -1,4 +1,4 @@
-package com.jmdev.storycrm.domain;
+package com.jmdev.storycrm.domain.company;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,12 +9,17 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-
-public class ProductMainCategory {
+public class Company {
 
     @Id
-    private Integer id;
+    private Long id;
 
     private String name;
+
+    private Long NIPnumber;
+
+    private Address address;
+
+
 
 }

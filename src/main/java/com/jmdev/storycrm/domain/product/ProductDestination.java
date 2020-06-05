@@ -1,4 +1,4 @@
-package com.jmdev.storycrm.domain;
+package com.jmdev.storycrm.domain.product;
 
 import lombok.Getter;
 import lombok.Setter;

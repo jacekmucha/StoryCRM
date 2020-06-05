@@ -1,6 +1,13 @@
 package com.jmdev.storycrm.controllers;
 
-import com.jmdev.storycrm.domain.*;
+import com.jmdev.storycrm.domain.internalProcedure.InternalProcedureDocument;
+import com.jmdev.storycrm.domain.offer.Offer;
+import com.jmdev.storycrm.domain.company.Company;
+import com.jmdev.storycrm.domain.company.ContactPerson;
+import com.jmdev.storycrm.domain.product.Product;
+import com.jmdev.storycrm.domain.salesMan.SalesMan;
+import com.jmdev.storycrm.domain.salesTask.AssignedTaskDocument;
+import com.jmdev.storycrm.domain.salesTask.SalesTaskProgressTestItem;
 import com.jmdev.storycrm.services.SalesTaskService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -8,7 +15,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.math.BigDecimal;
@@ -40,11 +46,11 @@ public class SalesTaskControllerTest {
         Date taskEstablishedDate;
         Date lastProgressDate;
         Company company;
-        List<CompanyContactPerson> companyContactPersons;
+        List<ContactPerson> contactPeople;
         SalesMan mainSalesMan;
         List<SalesMan> supportingSalesTeam;
         List<Product> discussedProducts;
-        List<SalesTaskProgress> progressList;
+        List<SalesTaskProgressTestItem> progressList;
         BigDecimal currentTaskValue;
         Double chanceOfPositiveFinishingTask;
         Date estimatedDateOfFinishingTask;
@@ -56,6 +62,7 @@ public class SalesTaskControllerTest {
 
 
     }
+
 
 
 }

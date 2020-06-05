@@ -1,4 +1,4 @@
-package com.jmdev.storycrm.domain;
+package com.jmdev.storycrm.domain.product;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,8 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class InternalProcedureName {
+
+public class ProductMainCategory {
 
     @Id
     private Integer id;

@@ -1,4 +1,4 @@
-package com.jmdev.storycrm.domain;
+package com.jmdev.storycrm.domain.salesTask;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,12 +9,10 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-
-public class ProductSubCategory {
+public class ContactTypeTestItem {
 
     @Id
     private Integer id;
 
-    private String name;
-
+    private String type;
 }

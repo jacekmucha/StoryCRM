@@ -1,4 +1,4 @@
-package com.jmdev.storycrm.domain;
+package com.jmdev.storycrm.domain.internalProcedure;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,16 +9,11 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-
-public class Picture {
+public class InternalProcedureName {
 
     @Id
     private Integer id;
 
     private String name;
-
-    private String description;
-
-    private String resourceLink;
 
 }
