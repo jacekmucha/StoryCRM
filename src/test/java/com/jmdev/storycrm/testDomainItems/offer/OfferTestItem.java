@@ -6,6 +6,8 @@ import com.jmdev.storycrm.utils.DateFormatter;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -16,8 +18,8 @@ public class OfferTestItem {
         Offer testItem = new Offer();
         testItem.setId(1L);
         testItem.setProduct(ProductTestItem.buildTestItem());
-        testItem.setCreationDate(DateFormatter.fromStringToDate("23-12-2020T12:45:34"));
-        testItem.setLastModifyDate(DateFormatter.fromStringToDate("24-12-2020T15:37:21"));
+        testItem.setCreationDate(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-23 12:45:34"));
+        testItem.setLastModifyDate(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-24 15:37:21"));
         testItem.setResourceLink("offer resource link");
         return testItem;
     }

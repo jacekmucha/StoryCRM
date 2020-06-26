@@ -1,11 +1,13 @@
 package com.jmdev.storycrm.domain.offer;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jmdev.storycrm.domain.product.Product;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -18,9 +20,9 @@ public class Offer {
 
     private Product product;
 
-    private Date creationDate;
+    private LocalDateTime creationDate;
 
-    private Date lastModifyDate;
+    private LocalDateTime lastModifyDate;
 
     private String resourceLink;
 

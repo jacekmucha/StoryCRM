@@ -5,6 +5,7 @@ import com.jmdev.storycrm.utils.DateFormatter;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -17,8 +18,8 @@ public class InternalProcedureDocumentTestItem {
         InternalProcedureDocument testItem = new InternalProcedureDocument();
         testItem.setId(1);
         testItem.setInternalProcedureName(InternalProcedureNameTestItem.buildTestItem());
-        testItem.setCreationDate(DateFormatter.fromStringToDate("26-12-2020T10:13:56"));
-        testItem.setLastModifyDate(DateFormatter.fromStringToDate("27-12-2020T11:32:10"));
+        testItem.setCreationDate(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-26 10:13:56"));
+        testItem.setLastModifyDate(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-27 11:32:10"));
         testItem.setResourceLink("Document resource link");
         return testItem;
     }

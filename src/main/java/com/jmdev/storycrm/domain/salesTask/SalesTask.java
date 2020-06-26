@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.domain.salesTask;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jmdev.storycrm.domain.internalProcedure.InternalProcedureDocument;
 import com.jmdev.storycrm.domain.offer.Offer;
 import com.jmdev.storycrm.domain.salesMan.SalesMan;
@@ -12,6 +13,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -23,8 +25,11 @@ public class SalesTask {
     @Id
     private Long id;
     private Integer version;
-    private Date taskEstablishedDate;
-    private Date lastProgressDate;
+
+    private LocalDateTime taskEstablishedDate;
+
+    private LocalDateTime lastProgressDate;
+
     private Company company;
     private List<ContactPerson> contactPersonsList;
     private SalesMan mainSalesMan;
@@ -33,7 +38,9 @@ public class SalesTask {
     private List<SalesTaskProgress> progressList;
     private BigDecimal currentTaskValue;
     private Double chanceOfPositiveFinishingTask;
-    private Date estimatedDateOfFinishingTask;
+
+    private LocalDateTime estimatedDateOfFinishingTask;
+
     private List<Offer> alreadySentOffersList;
     private List<AssignedTaskDocument> assignedTaskDocumentsList;
     private List<InternalProcedureDocument> internalProceduresDocumentsList;

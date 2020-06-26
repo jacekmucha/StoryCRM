@@ -19,6 +19,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +55,8 @@ public class SalesTaskTestItem {
         SalesTask testItem = new SalesTask();
         testItem.setId(1L);
         testItem.setVersion(1);
-        testItem.setTaskEstablishedDate(DateFormatter.fromStringToDate("10-12-2020T09:12:45"));
-        testItem.setLastProgressDate(DateFormatter.fromStringToDate("10-12-2020T09:30:56"));
+        testItem.setTaskEstablishedDate(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-10 09:12:45"));
+        testItem.setLastProgressDate(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-10 09:30:56"));
         testItem.setCompany(CompanyTestItem.buildTestItem());
         testItem.setContactPersonsList(contactPersonTestItemList);
         testItem.setMainSalesMan(SalesManTestItem.buildTestItemNo1());
@@ -64,7 +65,7 @@ public class SalesTaskTestItem {
         testItem.setProgressList(progressTestList);
         testItem.setCurrentTaskValue(BigDecimal.valueOf(250000));
         testItem.setChanceOfPositiveFinishingTask(0.45);
-        testItem.setEstimatedDateOfFinishingTask(DateFormatter.fromStringToDate("30-12-2020T13:00:00"));
+        testItem.setEstimatedDateOfFinishingTask(DateFormatter.mkyongFromStringToLocalDateTime("2020-12-30 13:00:00"));
         testItem.setAlreadySentOffersList(alreadySentOffersTestList);
         testItem.setAssignedTaskDocumentsList(assignedTaskDocumentsTestList);
         testItem.setInternalProceduresDocumentsList(internalProceduresDocumentsTestList);
