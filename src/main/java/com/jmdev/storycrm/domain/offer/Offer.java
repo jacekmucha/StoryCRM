@@ -14,7 +14,7 @@ import java.util.Date;
 public class Offer {
 
     @Id
-    private Integer id;
+    private Long id;
 
     private Product product;
 

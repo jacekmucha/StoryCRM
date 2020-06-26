@@ -18,7 +18,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class SalesTaskTestItem {
+public class SalesTask {
 
     @Id
     private Long id;
@@ -30,7 +30,7 @@ public class SalesTaskTestItem {
     private SalesMan mainSalesMan;
     private List<SalesMan> supportingSalesTeam;
     private List<Product> discussedProducts;
-    private List<SalesTaskProgressTestItem> progressList;
+    private List<SalesTaskProgress> progressList;
     private BigDecimal currentTaskValue;
     private Double chanceOfPositiveFinishingTask;
     private Date estimatedDateOfFinishingTask;
@@ -38,11 +38,8 @@ public class SalesTaskTestItem {
     private List<AssignedTaskDocument> assignedTaskDocumentsList;
     private List<InternalProcedureDocument> internalProceduresDocumentsList;
 
-    public SalesTaskTestItem(){
+    public SalesTask(){
     }
 
-    public static SalesTaskTestItem buildTestItem(){
-
-    }
 
 }

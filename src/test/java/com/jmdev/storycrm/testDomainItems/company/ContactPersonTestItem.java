@@ -27,7 +27,7 @@ public class ContactPersonTestItem {
         testItem.setId(1L);
         testItem.setFirstName("Józef");
         testItem.setLastName("Marek");
-        testItem.setCompanyTestItem(companyTestItem);
+        testItem.setCompanyTestItem(CompanyTestItem.buildTestItem());
         testItem.setMobilePhone(234234234);
         testItem.setStationaryPhone(183326951);
         testItem.setEmail("owocarnia@owocarnia.pl");

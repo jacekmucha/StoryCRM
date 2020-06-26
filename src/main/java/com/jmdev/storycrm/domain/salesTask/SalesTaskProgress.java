@@ -5,19 +5,17 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
-@Entity
 @Getter
 @Setter
-public class AssignedTaskDocument {
+@Entity
+public class SalesTaskProgress {
 
     @Id
     private Long id;
-
-    private String name;
-
+    private Date thisContactDate;
+    private ContactType contactType;
     private String description;
-
-    private String resourceLink;
 
 }

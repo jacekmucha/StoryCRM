@@ -7,7 +7,7 @@ import com.jmdev.storycrm.domain.company.ContactPerson;
 import com.jmdev.storycrm.domain.product.Product;
 import com.jmdev.storycrm.domain.salesMan.SalesMan;
 import com.jmdev.storycrm.domain.salesTask.AssignedTaskDocument;
-import com.jmdev.storycrm.domain.salesTask.SalesTaskProgressTestItem;
+import com.jmdev.storycrm.testDomainItems.salesTask.SalesTaskProgressTestItem;
 import com.jmdev.storycrm.services.SalesTaskService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

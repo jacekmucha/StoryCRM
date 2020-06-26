@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class ContactTypeTestItem {
+public class ContactType {
 
     @Id
     private Integer id;
