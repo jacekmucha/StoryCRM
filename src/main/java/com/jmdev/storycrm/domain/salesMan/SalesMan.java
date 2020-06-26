@@ -18,7 +18,7 @@ public class SalesMan {
 
     private String lastName;
 
-    private String mobilePhoneNumber;
+    private Integer mobilePhoneNumber;
 
     private String email;
 

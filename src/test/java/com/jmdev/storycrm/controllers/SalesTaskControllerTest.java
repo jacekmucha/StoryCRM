@@ -1,65 +1,80 @@
 package com.jmdev.storycrm.controllers;
 
-import com.jmdev.storycrm.domain.internalProcedure.InternalProcedureDocument;
-import com.jmdev.storycrm.domain.offer.Offer;
-import com.jmdev.storycrm.domain.company.Company;
-import com.jmdev.storycrm.domain.company.ContactPerson;
-import com.jmdev.storycrm.domain.product.Product;
-import com.jmdev.storycrm.domain.salesMan.SalesMan;
-import com.jmdev.storycrm.domain.salesTask.AssignedTaskDocument;
-import com.jmdev.storycrm.testDomainItems.salesTask.SalesTaskProgressTestItem;
+
+import com.jmdev.storycrm.domain.salesTask.SalesTask;
 import com.jmdev.storycrm.services.SalesTaskService;
-import org.junit.jupiter.api.BeforeAll;
+import com.jmdev.storycrm.testDomainItems.salesTask.SalesTaskTestItem;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.ResultActions;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@ExtendWith(SpringExtension.class)
+@WebMvcTest
 public class SalesTaskControllerTest {
 
-    @Mock
+    @Autowired
+    MockMvc mockMvc;
+
+    @MockBean
     private SalesTaskService salesTaskService;
 
-    @InjectMocks
-    private SalesTaskController salesTaskController;
-
-    private MockMvc mockMvc;
-
-
-    @BeforeAll
-    public void setup(){
-        MockitoAnnotations.initMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(salesTaskController).build();
-    }
 
     @Test
     public void createNewSalesTask(){
 
-        Long id = 1L;
-        Integer version = 1;
-        Date taskEstablishedDate;
-        Date lastProgressDate;
-        Company company;
-        List<ContactPerson> contactPeople;
-        SalesMan mainSalesMan;
-        List<SalesMan> supportingSalesTeam;
-        List<Product> discussedProducts;
-        List<SalesTaskProgressTestItem> progressList;
-        BigDecimal currentTaskValue;
-        Double chanceOfPositiveFinishingTask;
-        Date estimatedDateOfFinishingTask;
-        List<Offer> alreadySentOffersList;
-        List<AssignedTaskDocument> assignedTaskDocumentsList;
-        List<InternalProcedureDocument> internalProceduresDocumentsList;
+        SalesTask newSalesTask = new SalesTask();
+        newSalesTask = SalesTaskTestItem.buildTestItem();
 
+        when(salesTaskService.save(any(SalesTask.class))).thenReturn(newSalesTask);
 
+        ObjectMapper objectMapper = new ObjectMapper();
 
+        try {
+            String newSalesTaskJSON = objectMapper.writeValueAsString(newSalesTask);
+
+            ResultActions resultActions = mockMvc.perform(
+                    post("/salesTask")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(newSalesTaskJSON)
+            );
+
+            resultActions.andExpect(status().isCreated())
+                    .andDo(print())
+                    .andExpect(content().contentType("application/json"))
+                    .andExpect(jsonPath("$.id").value(1L))
+                    .andExpect(jsonPath("$.version").value(1))
+                    .andExpect(jsonPath("$.taskEstablishedDate").value(SalesTaskTestItem.buildTestItem().getTaskEstablishedDate()))
+                    .andExpect(jsonPath("$.lastProgressDate").value(SalesTaskTestItem.buildTestItem().getLastProgressDate()))
+                    .andExpect(jsonPath("$.company").value(SalesTaskTestItem.buildTestItem().getCompany()))
+                    .andExpect(jsonPath("$.contactPersonsList").value(SalesTaskTestItem.buildTestItem().getContactPersonsList()))
+                    .andExpect(jsonPath("$.mainSalesMan").value(SalesTaskTestItem.buildTestItem().getMainSalesMan()))
+                    .andExpect(jsonPath("$.supportingSalesTeam").value(SalesTaskTestItem.buildTestItem().getSupportingSalesTeam()))
+                    .andExpect(jsonPath("$.discussedProducts").value(SalesTaskTestItem.buildTestItem().getDiscussedProducts()))
+                    .andExpect(jsonPath("$.progressList").value(SalesTaskTestItem.buildTestItem().getProgressList()))
+                    .andExpect(jsonPath("$.currentTaskValue").value(SalesTaskTestItem.buildTestItem().getCurrentTaskValue()))
+                    .andExpect(jsonPath("$.chanceOfPositiveFinishingTask").value(SalesTaskTestItem.buildTestItem().getChanceOfPositiveFinishingTask()))
+                    .andExpect(jsonPath("$.estimatedDateOfFinishingTask").value(SalesTaskTestItem.buildTestItem().getEstimatedDateOfFinishingTask()))
+                    .andExpect(jsonPath("$.alreadySentOffersList").value(SalesTaskTestItem.buildTestItem().getAlreadySentOffersList()))
+                    .andExpect(jsonPath("$.assignedTaskDocumentsList").value(SalesTaskTestItem.buildTestItem().getAssignedTaskDocumentsList()))
+                    .andExpect(jsonPath("$.internalProceduresDocumentsList").value(SalesTaskTestItem.buildTestItem().getInternalProceduresDocumentsList()));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

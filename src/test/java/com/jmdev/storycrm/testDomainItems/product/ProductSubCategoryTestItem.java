@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.product;
 
+import com.jmdev.storycrm.domain.product.ProductSubCategory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +9,9 @@ import lombok.Setter;
 
 public class ProductSubCategoryTestItem {
 
-    private Integer id;
-    private String name;
 
-    public ProductSubCategoryTestItem(){
-    }
-
-    public static ProductSubCategoryTestItem buildTestItem(){
-        ProductSubCategoryTestItem testItem = new ProductSubCategoryTestItem();
+    public static ProductSubCategory buildTestItem(){
+        ProductSubCategory testItem = new ProductSubCategory();
         testItem.setId(1);
         testItem.setName("Odbiorniki precyzyjne RTK");
         return testItem;

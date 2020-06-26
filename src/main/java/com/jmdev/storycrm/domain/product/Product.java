@@ -39,7 +39,7 @@ public class Product {
 
     private List<Video> videoList;
 
-    private BigDecimal price;
+    private BigDecimal netPrice;
 
     private Boolean showPrice;
 }

@@ -1,5 +1,8 @@
 package com.jmdev.storycrm.testDomainItems.product;
 
+import com.jmdev.storycrm.domain.product.Picture;
+import com.jmdev.storycrm.domain.product.Product;
+import com.jmdev.storycrm.domain.product.Video;
 import com.jmdev.storycrm.testDomainItems.manufacturer.ManufacturerTestItem;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,52 +15,33 @@ import java.util.List;
 @Setter
 public class ProductTestItem {
 
-    private Long id;
-    private String name;
-    private ManufacturerTestItem manufacturerTestItem;
-    private ProductTypeTestItem productTypeTestItem;
-    private ProductDestinationTestItem productDestinationTestItemn;
-    private ProductMainCategoryTestItem productMainCategoryTestItem;
-    private ProductSubCategoryTestItem productSubCategoryTestItem;
-    private List<ProductTestItem> relatedProductTestItems;
-    private PictureTestItem mainPictureTestItem;
-    private List<PictureTestItem> productGalleryTestItems;
-    private VideoTestItem mainVideoTestItem;
-    private List<VideoTestItem> videoTestItemList;
-    private BigDecimal netPrice;
-    private Boolean showPrice;
+    public static Product buildTestItem(){
 
-    public ProductTestItem(){
-
-    }
-
-    public static ProductTestItem buildTestItem(){
-
-        List<PictureTestItem> testPictureGallery = new ArrayList<>();
+        List<Picture> testPictureGallery = new ArrayList<>();
         testPictureGallery.add(PictureTestItem.buildTestItemNo2());
         testPictureGallery.add(PictureTestItem.buildTestItemNo3());
         testPictureGallery.add(PictureTestItem.buildTestItemNo4());
 
-        List<ProductTestItem> relatedProductsTestItems = new ArrayList<>();
+        List<Product> relatedProductsTestItems = new ArrayList<>();
 
-        List<VideoTestItem> videoTestGallery = new ArrayList<>();
+        List<Video> videoTestGallery = new ArrayList<>();
         videoTestGallery.add(VideoTestItem.buildTestItemNo2());
         videoTestGallery.add(VideoTestItem.buildTestItemNo3());
         videoTestGallery.add(VideoTestItem.buildTestItemNo4());
 
-        ProductTestItem testItem = new ProductTestItem();
+        Product testItem = new Product();
         testItem.setId(1L);
         testItem.setName("SP60");
-        testItem.setManufacturerTestItem(ManufacturerTestItem.buildTestItem());
-        testItem.setProductTypeTestItem(ProductTypeTestItem.buildTestItem());
-        testItem.setProductDestinationTestItemn(ProductDestinationTestItem.buildTestItem());
-        testItem.setProductMainCategoryTestItem(ProductMainCategoryTestItem.buildTestItem());
-        testItem.setProductSubCategoryTestItem(ProductSubCategoryTestItem.buildTestItem());
-        testItem.setRelatedProductTestItems(relatedProductsTestItems);
-        testItem.setMainPictureTestItem(PictureTestItem.buildTestItemNo1());
-        testItem.setProductGalleryTestItems(testPictureGallery);
-        testItem.setMainVideoTestItem(VideoTestItem.buildTestItemNo1());
-        testItem.setVideoTestItemList(videoTestGallery);
+        testItem.setManufacturer(ManufacturerTestItem.buildTestItem());
+        testItem.setProductType(ProductTypeTestItem.buildTestItem());
+        testItem.setProductDestination(ProductDestinationTestItem.buildTestItem());
+        testItem.setProductMainCategory(ProductMainCategoryTestItem.buildTestItem());
+        testItem.setProductSubCategory(ProductSubCategoryTestItem.buildTestItem());
+        testItem.setRelatedProducts(relatedProductsTestItems);
+        testItem.setMainPicture(PictureTestItem.buildTestItemNo1());
+        testItem.setProductGallery(testPictureGallery);
+        testItem.setMainVideo(VideoTestItem.buildTestItemNo1());
+        testItem.setVideoList(videoTestGallery);
         testItem.setNetPrice(BigDecimal.valueOf(29900.00));
         testItem.setShowPrice(false);
         return testItem;

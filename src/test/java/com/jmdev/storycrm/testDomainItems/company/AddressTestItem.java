@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.company;
 
+import com.jmdev.storycrm.domain.company.Address;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,19 +8,8 @@ import lombok.Setter;
 @Setter
 public class AddressTestItem {
 
-    private Long id;
-    private String voivodeship;
-    private String postalCode;
-    private String city;
-    private String street;
-    private String fullBiuldingNumber;
-    private Integer flatNumber;
-
-    public AddressTestItem() {
-    }
-
-    public static AddressTestItem buildTestItem(){
-        AddressTestItem testItem = new AddressTestItem();
+    public static Address buildTestItem(){
+        Address testItem = new Address();
         testItem.setId(1L);
         testItem.setVoivodeship("malopolskie");
         testItem.setPostalCode("34-650");

@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.product;
 
+import com.jmdev.storycrm.domain.product.ProductType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,14 +12,9 @@ import javax.persistence.Id;
 public class ProductTypeTestItem {
 
 
-    private Integer id;
-    private String name;
 
-    public ProductTypeTestItem() {
-    }
-
-    public static ProductTypeTestItem buildTestItem(){
-        ProductTypeTestItem testItem = new ProductTypeTestItem();
+    public static ProductType buildTestItem(){
+        ProductType testItem = new ProductType();
         testItem.setId(1);
         testItem.setName("Odbiorniki RTK na tyczkę");
         return testItem;

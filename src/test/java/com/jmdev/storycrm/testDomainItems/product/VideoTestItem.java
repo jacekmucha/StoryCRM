@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.product;
 
+import com.jmdev.storycrm.domain.product.Video;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,17 +9,9 @@ import lombok.Setter;
 
 public class VideoTestItem {
 
-    private Integer id;
-    private String name;
-    private String description;
-    private String resourceLink;
 
-    public VideoTestItem(){
-
-    }
-
-    public static VideoTestItem buildTestItemNo1(){
-        VideoTestItem testItem = new VideoTestItem();
+    public static Video buildTestItemNo1(){
+        Video testItem = new Video();
         testItem.setId(1);
         testItem.setName("Prezentacja odbiornika SP60");
         testItem.setDescription("Super film!");
@@ -26,8 +19,8 @@ public class VideoTestItem {
         return testItem;
     }
 
-    public static VideoTestItem buildTestItemNo2(){
-        VideoTestItem testItem = new VideoTestItem();
+    public static Video buildTestItemNo2(){
+        Video testItem = new Video();
         testItem.setId(1);
         testItem.setName("Bluetooth dalekiego zasięgu");
         testItem.setDescription("Super film!");
@@ -35,8 +28,8 @@ public class VideoTestItem {
         return testItem;
     }
 
-    public static VideoTestItem buildTestItemNo3(){
-        VideoTestItem testItem = new VideoTestItem();
+    public static Video buildTestItemNo3(){
+        Video testItem = new Video();
         testItem.setId(1);
         testItem.setName("Radiomodem");
         testItem.setDescription("Super film!");
@@ -44,8 +37,8 @@ public class VideoTestItem {
         return testItem;
     }
 
-    public static VideoTestItem buildTestItemNo4(){
-        VideoTestItem testItem = new VideoTestItem();
+    public static Video buildTestItemNo4(){
+        Video testItem = new Video();
         testItem.setId(1);
         testItem.setName("Z-Blade w terenie z SP60");
         testItem.setDescription("Super film!");

@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.salesMan;
 
+import com.jmdev.storycrm.domain.salesMan.SalesMan;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,17 +8,9 @@ import lombok.Setter;
 @Setter
 public class SalesManTestItem {
 
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private Integer mobilePhoneNumber;
-    private String email;
 
-    public SalesManTestItem() {
-    }
-
-    public static SalesManTestItem buildTestItemNo1(){
-        SalesManTestItem salesManTestItem = new SalesManTestItem();
+    public static SalesMan buildTestItemNo1(){
+        SalesMan salesManTestItem = new SalesMan();
         salesManTestItem.setId(1L);
         salesManTestItem.setFirstName("Jacek");
         salesManTestItem.setLastName("Mucha");
@@ -26,8 +19,8 @@ public class SalesManTestItem {
         return salesManTestItem;
     }
 
-    public static SalesManTestItem buildTestItemNo2(){
-        SalesManTestItem salesManTestItem = new SalesManTestItem();
+    public static SalesMan buildTestItemNo2(){
+        SalesMan salesManTestItem = new SalesMan();
         salesManTestItem.setId(2L);
         salesManTestItem.setFirstName("Antoni");
         salesManTestItem.setLastName("Nowak");
@@ -36,8 +29,8 @@ public class SalesManTestItem {
         return salesManTestItem;
     }
 
-    public static SalesManTestItem buildTestItemNo3(){
-        SalesManTestItem salesManTestItem = new SalesManTestItem();
+    public static SalesMan buildTestItemNo3(){
+        SalesMan salesManTestItem = new SalesMan();
         salesManTestItem.setId(3L);
         salesManTestItem.setFirstName("Robert");
         salesManTestItem.setLastName("Borowy");

@@ -1,6 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.company;
 
-
+import com.jmdev.storycrm.domain.company.ContactPerson;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,26 +8,14 @@ import lombok.Setter;
 @Setter
 public class ContactPersonTestItem {
 
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private CompanyTestItem companyTestItem;
-    private Integer mobilePhone;
-    private Integer stationaryPhone;
-    private String email;
 
+    public static ContactPerson buildTestItem(){
 
-    public ContactPersonTestItem() {
-    }
-
-    public static ContactPersonTestItem buildTestItem(){
-        CompanyTestItem companyTestItem = CompanyTestItem.buildTestItem();
-
-        ContactPersonTestItem testItem = new ContactPersonTestItem();
+        ContactPerson testItem = new ContactPerson();
         testItem.setId(1L);
         testItem.setFirstName("Józef");
         testItem.setLastName("Marek");
-        testItem.setCompanyTestItem(CompanyTestItem.buildTestItem());
+        testItem.setCompany(CompanyTestItem.buildTestItem());
         testItem.setMobilePhone(234234234);
         testItem.setStationaryPhone(183326951);
         testItem.setEmail("owocarnia@owocarnia.pl");

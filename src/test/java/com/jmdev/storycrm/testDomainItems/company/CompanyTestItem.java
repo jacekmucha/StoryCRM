@@ -1,5 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.company;
 
+import com.jmdev.storycrm.domain.company.Address;
+import com.jmdev.storycrm.domain.company.Company;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,14 +18,15 @@ public class CompanyTestItem {
     public CompanyTestItem() {
     }
 
-    public static CompanyTestItem buildTestItem(){
-        AddressTestItem addressTestItem = AddressTestItem.buildTestItem();
+    public static Company buildTestItem(){
+        Address address = AddressTestItem.buildTestItem();
 
-        CompanyTestItem testItem = new CompanyTestItem();
+        Company testItem = new Company();
         testItem.setId(1L);
         testItem.setName("Owocarnia");
         testItem.setNIPnumber(345353534354335L);
-        testItem.setAddressTestItem(addressTestItem);
+        testItem.setAddress(address);
         return testItem;
     }
+
 }

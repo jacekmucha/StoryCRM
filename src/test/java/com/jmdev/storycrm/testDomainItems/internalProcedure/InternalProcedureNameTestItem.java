@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.testDomainItems.internalProcedure;
 
+import com.jmdev.storycrm.domain.internalProcedure.InternalProcedureName;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,14 +8,9 @@ import lombok.Setter;
 @Setter
 public class InternalProcedureNameTestItem {
 
-    private Integer id;
-    private String name;
 
-    public InternalProcedureNameTestItem() {
-    }
-
-    public static InternalProcedureNameTestItem buildTestItem(){
-        InternalProcedureNameTestItem testItem = new InternalProcedureNameTestItem();
+    public static InternalProcedureName buildTestItem(){
+        InternalProcedureName testItem = new InternalProcedureName();
         testItem.setId(1);
         testItem.setName("Weryfikacja zamówienia ISO");
         return testItem;

@@ -26,7 +26,7 @@ public class SalesTask {
     private Date taskEstablishedDate;
     private Date lastProgressDate;
     private Company company;
-    private List<ContactPerson> contactPeople;
+    private List<ContactPerson> contactPersonsList;
     private SalesMan mainSalesMan;
     private List<SalesMan> supportingSalesTeam;
     private List<Product> discussedProducts;
