@@ -1,6 +1,7 @@
 package com.jmdev.storycrm.controllers;
 
 
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.jmdev.storycrm.domain.salesTask.SalesTask;
 import com.jmdev.storycrm.services.SalesTaskService;
 import com.jmdev.storycrm.testDomainItems.salesTask.SalesTaskTestItem;
@@ -16,7 +17,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-import static org.assertj.core.internal.bytebuddy.implementation.FixedValue.value;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -42,7 +42,7 @@ public class SalesTaskControllerTest {
 
         when(salesTaskService.save(any(SalesTask.class))).thenReturn(newSalesTask);
 
-        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());;
 
         try {
             String newSalesTaskJSON = objectMapper.writeValueAsString(newSalesTask);
