@@ -4,15 +4,11 @@ import com.jmdev.storycrm.domain.product.Picture;
 import com.jmdev.storycrm.domain.product.Product;
 import com.jmdev.storycrm.domain.product.Video;
 import com.jmdev.storycrm.testDomainItems.manufacturer.ManufacturerTestItem;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
 public class ProductTestItem {
 
     public static Product buildTestItem(){

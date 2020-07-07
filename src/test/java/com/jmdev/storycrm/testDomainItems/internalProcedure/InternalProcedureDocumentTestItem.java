@@ -2,16 +2,8 @@ package com.jmdev.storycrm.testDomainItems.internalProcedure;
 
 import com.jmdev.storycrm.domain.internalProcedure.InternalProcedureDocument;
 import com.jmdev.storycrm.utils.DateFormatter;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
-@Getter
-@Setter
 public class InternalProcedureDocumentTestItem {
-
 
 
     public static InternalProcedureDocument buildTestItem(){

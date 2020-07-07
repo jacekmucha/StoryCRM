@@ -1,12 +1,10 @@
 package com.jmdev.storycrm.controllers;
 
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.jmdev.storycrm.domain.salesTask.SalesTask;
 import com.jmdev.storycrm.services.SalesTaskService;
 import com.jmdev.storycrm.testDomainItems.salesTask.SalesTaskTestItem;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +17,13 @@ import org.springframework.test.web.servlet.ResultActions;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest
+
 public class SalesTaskControllerTest {
 
     @Autowired
@@ -42,7 +41,7 @@ public class SalesTaskControllerTest {
 
         when(salesTaskService.save(any(SalesTask.class))).thenReturn(newSalesTask);
 
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());;
+        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
         try {
             String newSalesTaskJSON = objectMapper.writeValueAsString(newSalesTask);
@@ -58,8 +57,8 @@ public class SalesTaskControllerTest {
                     .andExpect(content().contentType("application/json"))
                     .andExpect(jsonPath("$.id").value(1L))
                     .andExpect(jsonPath("$.version").value(1))
-                    .andExpect(jsonPath("$.taskEstablishedDate").value(SalesTaskTestItem.buildTestItem().getTaskEstablishedDate()))
-                    .andExpect(jsonPath("$.lastProgressDate").value(SalesTaskTestItem.buildTestItem().getLastProgressDate()))
+                    .andExpect(jsonPath("$.taskEstablishedDate").value(SalesTaskTestItem.buildTestItem().getTaskEstablishedDate().toString()))
+                    .andExpect(jsonPath("$.lastProgressDate").value(SalesTaskTestItem.buildTestItem().getLastProgressDate().toString()))
                     .andExpect(jsonPath("$.company").value(SalesTaskTestItem.buildTestItem().getCompany()))
                     .andExpect(jsonPath("$.contactPersonsList").value(SalesTaskTestItem.buildTestItem().getContactPersonsList()))
                     .andExpect(jsonPath("$.mainSalesMan").value(SalesTaskTestItem.buildTestItem().getMainSalesMan()))
@@ -80,5 +79,10 @@ public class SalesTaskControllerTest {
     }
 
 
-
 }
+
+
+
+
+
+

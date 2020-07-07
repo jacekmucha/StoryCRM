@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.domain.company;
 
+import com.jmdev.storycrm.utils.JSONFormatter;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +27,8 @@ public class ContactPerson {
 
     private String email;
 
-
-
+    @Override
+    public String toString() {
+        return JSONFormatter.useGSON(this);
+    }
 }

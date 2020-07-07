@@ -1,11 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.salesTask;
 
 import com.jmdev.storycrm.domain.salesTask.AssignedTaskDocument;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class AssignedTaskDocumentTestItem {
 
 

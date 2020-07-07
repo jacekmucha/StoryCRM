@@ -1,7 +1,9 @@
 package com.jmdev.storycrm.domain.company;
 
+import com.jmdev.storycrm.utils.JSONFormatter;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,6 +27,11 @@ public class Address {
     private String fullBiuldingNumber;
 
     private Integer flatNumber;
+
+    @Override
+    public String toString() {
+        return JSONFormatter.useGSON(this);
+    }
 
 
 

@@ -15,16 +15,12 @@ import com.jmdev.storycrm.testDomainItems.offer.OfferTestItem;
 import com.jmdev.storycrm.testDomainItems.product.ProductTestItem;
 import com.jmdev.storycrm.testDomainItems.salesMan.SalesManTestItem;
 import com.jmdev.storycrm.utils.DateFormatter;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
+
 public class SalesTaskTestItem {
 
     public static SalesTask buildTestItem(){

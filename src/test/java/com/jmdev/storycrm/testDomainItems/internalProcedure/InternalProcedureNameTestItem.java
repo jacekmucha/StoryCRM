@@ -1,11 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.internalProcedure;
 
 import com.jmdev.storycrm.domain.internalProcedure.InternalProcedureName;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class InternalProcedureNameTestItem {
 
 

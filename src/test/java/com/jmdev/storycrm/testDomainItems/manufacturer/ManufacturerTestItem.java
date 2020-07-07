@@ -1,11 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.manufacturer;
 
 import com.jmdev.storycrm.domain.manufacturer.Manufacturer;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class ManufacturerTestItem {
 
 

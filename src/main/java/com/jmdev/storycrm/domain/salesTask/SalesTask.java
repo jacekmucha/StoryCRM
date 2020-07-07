@@ -7,6 +7,7 @@ import com.jmdev.storycrm.domain.salesMan.SalesMan;
 import com.jmdev.storycrm.domain.company.Company;
 import com.jmdev.storycrm.domain.company.ContactPerson;
 import com.jmdev.storycrm.domain.product.Product;
+import com.jmdev.storycrm.utils.JSONFormatter;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,5 +49,9 @@ public class SalesTask {
     public SalesTask(){
     }
 
+    @Override
+    public String toString() {
+        return JSONFormatter.useGSON(this);
+    }
 
 }

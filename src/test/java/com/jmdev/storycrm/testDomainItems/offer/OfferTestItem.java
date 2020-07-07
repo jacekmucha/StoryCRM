@@ -3,14 +3,7 @@ package com.jmdev.storycrm.testDomainItems.offer;
 import com.jmdev.storycrm.domain.offer.Offer;
 import com.jmdev.storycrm.testDomainItems.product.ProductTestItem;
 import com.jmdev.storycrm.utils.DateFormatter;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.time.LocalDateTime;
-
-
-@Getter
-@Setter
 public class OfferTestItem {
 
 

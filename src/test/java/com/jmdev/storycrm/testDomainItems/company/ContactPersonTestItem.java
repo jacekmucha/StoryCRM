@@ -1,11 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.company;
 
 import com.jmdev.storycrm.domain.company.ContactPerson;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class ContactPersonTestItem {
 
 
@@ -13,7 +9,7 @@ public class ContactPersonTestItem {
 
         ContactPerson testItem = new ContactPerson();
         testItem.setId(1L);
-        testItem.setFirstName("Józef");
+        testItem.setFirstName("Jozef");
         testItem.setLastName("Marek");
         testItem.setCompany(CompanyTestItem.buildTestItem());
         testItem.setMobilePhone(234234234);

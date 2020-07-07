@@ -1,11 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.product;
 
 import com.jmdev.storycrm.domain.product.Video;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 
 public class VideoTestItem {
 

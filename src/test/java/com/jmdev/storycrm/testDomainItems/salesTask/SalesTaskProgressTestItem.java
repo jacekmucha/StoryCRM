@@ -1,17 +1,8 @@
 package com.jmdev.storycrm.testDomainItems.salesTask;
 
-import com.jmdev.storycrm.domain.salesTask.SalesTask;
 import com.jmdev.storycrm.domain.salesTask.SalesTaskProgress;
 import com.jmdev.storycrm.utils.DateFormatter;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
-
-@Getter
-@Setter
 public class SalesTaskProgressTestItem {
 
 

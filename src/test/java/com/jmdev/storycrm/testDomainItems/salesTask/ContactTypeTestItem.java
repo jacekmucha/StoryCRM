@@ -1,11 +1,7 @@
 package com.jmdev.storycrm.testDomainItems.salesTask;
 
 import com.jmdev.storycrm.domain.salesTask.ContactType;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class ContactTypeTestItem {
 
 

@@ -1,5 +1,6 @@
 package com.jmdev.storycrm.domain.company;
 
+import com.jmdev.storycrm.utils.JSONFormatter;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,10 +17,13 @@ public class Company {
 
     private String name;
 
-    private Long NIPnumber;
+    private Long nipNumber;
 
     private Address address;
 
-
+    @Override
+    public String toString() {
+        return JSONFormatter.useGSON(this);
+    }
 
 }
